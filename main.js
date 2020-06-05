@@ -22,11 +22,9 @@
 
 let calendar = new Calendar();
 
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
 document.addEventListener("DOMContentLoaded", function updateMonthYear() { 
     let displayYear = document.getElementById("currentMonthYear");
-    displayYear.innerHTML = calendar.getMonthString() + " " + calendar.year;
+    displayYear.innerHTML = calendar.getMonthString(calendar.month) + " " + calendar.year;
 
 });
 
@@ -35,19 +33,27 @@ document.addEventListener("DOMContentLoaded", function fillInAllDates() {
 
     let includePreviousMonthDays = null;
     let includeNextMonthDays = 7 - calendar.getLastDayOfCurrentMonth();
+    let counter = 0;
     
     // display days that are in the previous month
     if (calendar.getFirstDayOfCurrentMonth() >= 1){
         includePreviousMonthDays = (calendar.getDaysOfPreviousMonth() +1) - (calendar.getFirstDayOfCurrentMonth());
         for(j = includePreviousMonthDays; j <= calendar.getDaysOfPreviousMonth() ; j++){
-        list.innerHTML += '<div class="gridDaysOfWeekItem">' + j + '</div>';
+            if (counter == 0) {
+                list.innerHTML += '<div class="gridDaysOfWeekItem">' + calendar.getMonthString(calendar.month -1)+ j + '</div>';
+                counter++;
+            }
+            else{
+                list.innerHTML += '<div class="gridDaysOfWeekItem">' + j + '</div>';
+            }
+        
         }
     }
 
         // list the days for the current month
     for(i = 1; i <= calendar.getDaysOfMonth(); i++){
         if(i == 1){
-            list.innerHTML += '<div class="gridDaysOfWeekItem">' + calendar.getMonthString() + i + '</div>';
+            list.innerHTML += '<div class="gridDaysOfWeekItem">' + calendar.getMonthString(calendar.month) + i + '</div>';
         }
         else if (i == calendar.getTodaysDay()){
             list.innerHTML += '<div id="currentDay">' + i + '</div>';
@@ -61,9 +67,8 @@ document.addEventListener("DOMContentLoaded", function fillInAllDates() {
     
     if (calendar.getLastDayOfCurrentMonth() <= 7){
         for (n = 1; n <= includeNextMonthDays; n++){
-            if (includeNextMonthDays == 1) {
-                var d = new Date();
-                list.innerHTML += '<div class="gridDaysOfWeekItem">' + months[d.getMonth()] + n + '</div>';
+            if (n == 1) {
+                list.innerHTML += '<div class="gridDaysOfWeekItem">' + calendar.getMonthString(calendar.month +1) + n + '</div>';
             }
             else{
                 list.innerHTML += '<div class="gridDaysOfWeekItem">' + n + '</div>';
@@ -82,12 +87,5 @@ document.addEventListener("DOMContentLoaded", function fillInAllDates() {
     // console.log(calendar.getLastDayOfPreviousMonth());
     // console.log(includePreviousMonthDays); //30
     // console.log(calendar.getFirstDayOfNextMonth());
-    console.log(calendar.getNextMonth());
+    console.log(calendar.month + 1);
 });
-
-
-
-
-// highlightToday(){
-
-// }
