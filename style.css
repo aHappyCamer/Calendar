@@ -1,0 +1,52 @@
+
+
+#monthContainer {
+    text-align: center;
+    font-size: calc(1em + 2vw)
+}
+
+.gridParentHeader {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(7, 1fr); /* 5 equal fractions */
+    margin: 10px;
+}
+
+.gridWeekDayItem {
+    display: inline-block;
+    text-align: center;
+    font-size: calc(1em + 2vw)
+    height: 10vw; /* 10% of view width */
+    max-height: 25px;
+    background-color:#ccc;
+}
+
+#gridDaysOfWeek {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(7, 1fr); /*  equal fractions */
+    margin: 10px;
+}
+
+.gridDaysOfWeekItem {
+    display: inline-block;
+    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
+    border: solid 1px black;
+    font-size: calc(1em + 2vw)
+    height: 10vw; /* 10% of view width */
+    max-height: 25px;
+    background-color: white;
+    outline-color: black;
+}
+
+#currentDay {
+    background-color: green !important;
+    display: inline-block;
+    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
+    border: solid 1px black;
+    font-size: calc(1em + 2vw)
+    height: 10vw; /* 10% of view width */
+    max-height: 25px;
+    background-color: white;
+    outline-color: red;
+}
