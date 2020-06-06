@@ -17,14 +17,18 @@ font-family: 'Roboto', sans-serif;
     gap: 10px;
     grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
     margin: 10px;
+    min-width: 30px;
 }
 
 .gridWeekDayItem {
+    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
     padding-left: 10px;
     display: inline-block;
     text-align: center;
-    font-size: calc(1em + 10px);
-    max-height: 40px;
+    font-size: calc(1em + 8px);
+    min-height: 50px;
+    max-height: 100px;
+    min-width: 50px;
     background-color: #d5deda;
     border: solid 1px grey;
     border-radius:5px;
@@ -41,7 +45,7 @@ font-family: 'Roboto', sans-serif;
     display: inline-block;
     grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
     border: solid 1px black;
-    font-size: calc(1px + 18px);
+    font-size: calc(1px + 15px);
     height: 10vw; /* 10% of view width */
     min-height: 50px;
     max-height: 100px;
@@ -62,13 +66,17 @@ font-family: 'Roboto', sans-serif;
     display: none; 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
     .gridWeekDayItem-short { 
         border: solid 1px black;
         text-align: center;
+        text-decoration: bold;
         background-color:#d5deda;
         display: inline-block;
-        font-size: calc(1em + 6px);
+        font-size: calc(1em + 1px);
+        min-width: 50px;
+        border-radius:5px;
+
 
     }
     .gridWeekDayItem { 
