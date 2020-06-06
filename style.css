@@ -1,24 +1,33 @@
 
+*{
+padding: 5px;
+box-sizing: border-box;
+background-color: #bfe0d1;
+font-family: 'Roboto', sans-serif;
+}
 
-#monthContainer {
+#currentMonthYear {
     text-align: center;
-    font-size: calc(1em + 2vw)
+    font-weight: bolder;
+    font-size: calc(1em + 20px);
 }
 
 .gridParentHeader {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(7, 1fr); /* 5 equal fractions */
+    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
     margin: 10px;
 }
 
 .gridWeekDayItem {
+    padding-left: 10px;
     display: inline-block;
     text-align: center;
-    font-size: calc(1em + 2vw)
-    height: 10vw; /* 10% of view width */
-    max-height: 25px;
-    background-color:#ccc;
+    font-size: calc(1em + 10px);
+    max-height: 40px;
+    background-color: #d5deda;
+    border: solid 1px grey;
+    border-radius:5px;
 }
 
 #gridDaysOfWeek {
@@ -28,25 +37,44 @@
     margin: 10px;
 }
 
-.gridDaysOfWeekItem {
+.gridDaysOfWeekItem, #currentDay, .gridDaysOfWeekItem-non {
     display: inline-block;
     grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
     border: solid 1px black;
-    font-size: calc(1em + 2vw)
+    font-size: calc(1px + 18px);
     height: 10vw; /* 10% of view width */
-    max-height: 25px;
-    background-color: white;
+    min-height: 50px;
+    max-height: 100px;
+    background-color: #ffffff;
     outline-color: black;
+    border-radius:5px;
+}
+.gridDaysOfWeekItem-non {
+    color: #e3e3e3;
 }
 
 #currentDay {
-    background-color: green !important;
-    display: inline-block;
-    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
-    border: solid 1px black;
-    font-size: calc(1em + 2vw)
-    height: 10vw; /* 10% of view width */
-    max-height: 25px;
-    background-color: white;
-    outline-color: red;
+    background-color: #edb9c9; !important;
+    border: solid 3px rbg(109, 189, 162, 0.7);
 }
+
+.gridWeekDayItem-short { 
+    display: none; 
+}
+
+@media (max-width: 900px) {
+    .gridWeekDayItem-short { 
+        border: solid 1px black;
+        text-align: center;
+        background-color:#d5deda;
+        display: inline-block;
+        font-size: calc(1em + 6px);
+
+    }
+    .gridWeekDayItem { 
+        display: none; 
+    }
+}
+
+
+
