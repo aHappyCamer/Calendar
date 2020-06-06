@@ -1,16 +1,15 @@
 class Calendar {
 
     constructor(){
-        this.time = new Date('May 19, 2020 23:15:30');
-        // this.time = new Date(Date.now());
+        this.time = new Date(Date.now());
         this.year = this.time.getFullYear();
         this.month = this.time.getMonth() + 1;
         this.date = this.time.getDate();
         this.day = this.time.getDay() + 1;
     }
 
-    getMonthString() {
-        switch(this.month){
+    getMonthString(a) {
+        switch(a){
             case 1: return "January";
             case 2: return "February";
             case 3: return "March";
@@ -26,30 +25,24 @@ class Calendar {
         }
     }
 
-    getDayString() {
-        switch(this.day){
-            case 1: return "Sunday";
-            case 2: return "Monday";
-            case 3: return "Tuesday";
-            case 4: return "Wednesday";
-            case 5: return "Thursday";
-            case 6: return "Friday";
-            case 7: return "Saturday";
-        }
-    }
+    // getDayString() {
+    //     switch(this.day){
+    //         case 1: return "Sunday";
+    //         case 2: return "Monday";
+    //         case 3: return "Tuesday";
+    //         case 4: return "Wednesday";
+    //         case 5: return "Thursday";
+    //         case 6: return "Friday";
+    //         case 7: return "Saturday";
+    //     }
+    // }
 
     getTodaysDay(){
-        let a = new Date();
-        return a;
+        return new Date(Date.now()).getDay();
     }
 
     getDaysOfMonth(){
         let date = new Date(this.year, this.month, 0)
-        return date.getDate();
-    }
-
-    getNextMonth(){
-        return new Date(this.year, this.month+1, 1).getMonth();
         return date.getDate();
     }
 
@@ -62,7 +55,7 @@ class Calendar {
     }
 
     getLastDayOfCurrentMonth(){
-         return new Date(this.year, this.month, 0).getDay() + 1; // 1 day before June 1 => last day of may
+         return new Date(this.year, this.month, 0).getDay() + 1;
     }
 
     getLastDaysOfPreviousMonth(){
@@ -85,7 +78,6 @@ class Calendar {
     getLastDayOfPreviousMonth(){
         return new Date(this.year, this.month-2, 1).getDay() + 1;
     }
-
 
 
 }
