@@ -58,7 +58,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 #currentDay {
-    background-color: #edb9c9; !important;
+    background-color: #e6faf2; !important;
     border: solid 3px rbg(109, 189, 162, 0.7);
 }
 
@@ -83,3 +83,6 @@ font-family: 'Roboto', sans-serif;
         display: none; 
     }
 }
+
+
+
