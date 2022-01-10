@@ -15,14 +15,14 @@ font-family: 'Roboto', sans-serif;
 .gridParentHeader {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
+    grid-template-columns: repeat(7, 1fr);
     margin: 10px;
     min-width: 30px;
 }
 
 .gridWeekDayItem {
-    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
     padding-left: 10px;
+    grid-template-columns: repeat(7, 1fr); 
     display: inline-block;
     text-align: center;
     font-size: calc(1em + 8px);
@@ -37,21 +37,20 @@ font-family: 'Roboto', sans-serif;
 #gridDaysOfWeek {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(7, 1fr); /*  equal fractions */
+    grid-template-columns: repeat(7, 1fr); 
     margin: 10px;
 }
 
 .gridDaysOfWeekItem, #currentDay, .gridDaysOfWeekItem-non {
     display: inline-block;
-    grid-template-columns: repeat(7, 1fr); /* 7 equal fractions */
+    grid-template-columns: repeat(7, 1fr); 
     border: solid 1px black;
+    border-radius:5px;
     font-size: calc(1px + 15px);
-    height: 10vw; /* 10% of view width */
+    height: 10vw; 
     min-height: 50px;
     max-height: 100px;
     background-color: #ffffff;
-    outline-color: black;
-    border-radius:5px;
 }
 .gridDaysOfWeekItem-non {
     color: #e3e3e3;
@@ -69,19 +68,19 @@ font-family: 'Roboto', sans-serif;
 @media (max-width: 1150px) {
     .gridWeekDayItem-short { 
         border: solid 1px black;
+        border-radius:5px;
         text-align: center;
         text-decoration: bold;
         background-color:#d5deda;
         display: inline-block;
         font-size: calc(1em + 1px);
-        min-width: 50px;
-        border-radius:5px;
-
-
+        min-width: 50px; 
     }
+
     .gridWeekDayItem { 
         display: none; 
     }
+
 }
 
 

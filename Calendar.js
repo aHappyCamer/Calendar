@@ -25,59 +25,32 @@ class Calendar {
         }
     }
 
-    // getDayString() {
-    //     switch(this.day){
-    //         case 1: return "Sunday";
-    //         case 2: return "Monday";
-    //         case 3: return "Tuesday";
-    //         case 4: return "Wednesday";
-    //         case 5: return "Thursday";
-    //         case 6: return "Friday";
-    //         case 7: return "Saturday";
-    //     }
-    // }
-
+    // get today's date
     getTodaysDay(){
-        return new Date(Date.now()).getDay();
+        return new Date(Date.now()).getDate();
     }
 
+    // shows the number of days in the month
     getDaysOfMonth(){
         let date = new Date(this.year, this.month, 0)
         return date.getDate();
     }
 
+    // get the day of the week for first day of the week. 
+    // 1-based
     getFirstDayOfCurrentMonth(){
         return new Date(this.year, this.month-1, 1).getDay();
     }
 
-    getFirstDayOfNextMonth(){
-        return new Date(this.year, this.month, 1).getDay() + 1;
-    }
-
+    // get the day of the week on the last day of the month
+    //1-based
     getLastDayOfCurrentMonth(){
-         return new Date(this.year, this.month, 0).getDay() + 1;
+         return new Date(this.year, this.month, 0).getDay() + 1; 
     }
 
-    getLastDaysOfPreviousMonth(){
-         return new Date(this.year, this.month-1, 1).getDay();
-    }
-
-    getFirstDateOfNextMonth(){
-        return new Date(this.year, this.month, 1);
-    }
-
-    getLastDateOfPreviousMonth(){
-        return new Date(this.year, this.month-1, 0);
-    }
-
-    // show number of days in the previous month
+    // show number of days in the month for the previous month
     getDaysOfPreviousMonth(){
         return new Date(this.year, this.month-1, 0).getDate();
     }
-
-    getLastDayOfPreviousMonth(){
-        return new Date(this.year, this.month-2, 1).getDay() + 1;
-    }
-
 
 }

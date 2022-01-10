@@ -1,13 +1,10 @@
 
 let calendar = new Calendar();
-let previousMonth = calendar.month -1;
-let nextMonth = calendar.month +1;
-
 
 document.addEventListener("DOMContentLoaded", function updateMonthYear() { 
+    
     let displayYear = document.getElementById("currentMonthYear");
     displayYear.innerHTML = calendar.getMonthString(calendar.month) + " " + calendar.year;
-
 
 });
 
